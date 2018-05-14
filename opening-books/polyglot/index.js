@@ -43,11 +43,12 @@ class PolyglotStream extends Transform {
  }
 }
 class Polyglot extends EventEmitter {
-  constructor() {
+  constructor(singleEntry = false) {
     super();
     this.loaded = false;
     this.entries = [];
     this.stream = new PolyglotStream();
+    this.singleEntry = singleEntry;
   }
   load_book(stream) {
     this.entries = [];
@@ -56,6 +57,8 @@ class Polyglot extends EventEmitter {
     this.stream.on( "data", (entry)=>{
       if (!this.entries[entry.key]) {
         this.entries[entry.key] = [];
+      } else if(this.singleEntry) {
+        return;
       }
       this.entries[entry.key].push(entry);
     });
