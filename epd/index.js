@@ -1,7 +1,7 @@
 const EventEmitter = require('events');
 const EPDEntry = require("./entry.js");
 const Transform = require("stream").Transform;
-const utils = require(__dirname + '/../utils.js');
+const utils = require('../utils.js');
 class EPDStream extends Transform {
     constructor() {
         super({ readableObjectMode: true });

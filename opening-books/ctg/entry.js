@@ -1,7 +1,7 @@
 "use strict";
 const Chess = require("chess.js");
 const {peice_encoding, peice_encoding_black, flip_ep_column, castle_encoding,en_passant_encoding,en_passant_encoding_black,ep_mask, castle_mask, po, ep, ca } = require("./encoding.js");
-var utils = require(__dirname + '/../../utils.js');
+var utils = require('../../utils.js');
 class CTGEntry {
     constructor(to_move) {
       if (!to_move) {

@@ -1,6 +1,6 @@
 "use strict";
 var debug = require('debug')('CTG');
-var utils = require(__dirname + '/../../utils.js');
+var utils = require('../../utils.js');
 const CTGEntry = require("./entry.js");
 //Based on notes  from http://rybkaforum.net/cgi-bin/rybkaforum/topic_show.pl?tid=2319
 const Transform = require('stream').Transform;
